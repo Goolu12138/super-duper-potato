@@ -1,8 +1,15 @@
 #include <iostream>
 #include <cstdlib>
+#include <algorithm>
 #include <ctime>
 #include <vector>
 
+
+const int numberOfDice = 5;     //骰子数量
+const int maxRerolls = 2;       //重新掷骰子次数
+
+bool Four_of_a_kind = false;
+bool Five_of_a_kind = false;
 
 class Dice {
 public:
@@ -31,6 +38,51 @@ public:
                 dice[i] = roll();
         }
     }
+
+    int sumDice(std::vector<int> &dices)
+    {
+        int sum = 0;
+        for(auto dice : dices)
+        {
+            sum += dice;
+        }
+        return sum;
+    }
+
+    //四色同花和快艇
+    void isStraight(std::vector<int> &dice)
+    {
+        std::sort(dice.begin(), dice.end());
+
+        int temp_four_or_five = 1;
+        for(int i=1;i<numberOfDice;i++)
+        {
+            if(dice[i] != dice[i-1]+1){
+                temp_four_or_five++;
+            }
+            else
+            {
+                temp_four_or_five = 1;
+            }
+
+            if(temp_four_or_five == 5)
+            {
+                Four_of_a_kind = false;
+                Five_of_a_kind = true;
+            }
+            else if(temp_four_or_five == 4)
+            {
+                Four_of_a_kind = true;
+            }
+        }
+        
+        if(Five_of_a_kind)
+        {
+            Four_of_a_kind = false;
+        }
+
+    }
+
 };
 
 void printDice(const std::vector<int> &dice){
@@ -42,8 +94,6 @@ void printDice(const std::vector<int> &dice){
 int main() {
     // 创建一个Dice对象
     Dice dice;
-    const int numberOfDice = 5;
-    int maxRerolls = 2;
 
     // 掷骰子并输出结果
     std::vector<int> results = dice.rollMultiple(numberOfDice);
@@ -81,6 +131,11 @@ int main() {
 
     std::cout << "最终骰子为: ";
     printDice(results);
+
+    int sum = dice.sumDice(results);
+    std::cout << "骰子总和为: "  << sum << std::endl;
+
+    dice.isStraight(results);
     return 0;
 }
 
