@@ -6,6 +6,9 @@ extern const int numberOfDice;
 extern const int maxRerolls;
 
 extern bool Four_of_a_kind;
-extern bool Five_of_a_kind;
+extern bool Yahtzee;
+extern bool Full_house;
+extern bool Small_straight;
+extern bool Large_straight;
 
 #endif

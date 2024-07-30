@@ -6,7 +6,7 @@ Dice::Dice() {
 
 int Dice::roll() {
     Four_of_a_kind = false;
-    Five_of_a_kind = false;
+    Yahtzee = false;
     return std::rand() % 6 + 1;
 }
 

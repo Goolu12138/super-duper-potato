@@ -58,12 +58,22 @@ int main()
 
     // 检查并输出特殊的骰面组合
     yahtzeeCombination.isStraight(results);
+    yahtzeeCombination.isSame(results);
 
     if (Four_of_a_kind) {
         std::cout << "四色同花" << std::endl;
     }
-    if (Five_of_a_kind) {
+    if (Yahtzee) {
         std::cout << "快艇" << std::endl;
+    }
+    if (Small_straight) {
+        std::cout << "小顺" << std::endl;
+    }
+    if (Large_straight) {
+        std::cout << "大顺" << std::endl;
+    }
+    if (Full_house) {
+        std::cout << "葫芦" << std::endl;
     }
 
     return 0;

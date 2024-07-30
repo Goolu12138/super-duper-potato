@@ -9,7 +9,7 @@ const int numberOfDice = 5;     //骰子数量
 const int maxRerolls = 2;       //重新掷骰子次数
 
 bool Four_of_a_kind = false;
-bool Five_of_a_kind = false;
+bool Yahtzee = false;
 
 class Dice {
 public:
