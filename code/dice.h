@@ -19,6 +19,8 @@ public:
     void reroll(std::vector<int>& dice, const std::vector<bool>& rerollFlags);
     // 求所有骰子点数的总和
     int sumDice(const std::vector<int>& dice) const;
+    // 求1-6对应元素综合
+    int sumSpecificElement(const std::vector<int>& dice, int element) const;
 };
 
 #endif

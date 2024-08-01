@@ -10,5 +10,6 @@ extern bool Yahtzee;
 extern bool Full_house;
 extern bool Small_straight;
 extern bool Large_straight;
+extern bool All_choose;
 
 #endif

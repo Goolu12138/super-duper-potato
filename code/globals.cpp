@@ -9,3 +9,4 @@ bool Yahtzee = false;
 bool Full_house = false;
 bool Small_straight = false;
 bool Large_straight = false;
+bool All_choose = true;

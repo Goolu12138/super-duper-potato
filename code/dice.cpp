@@ -33,3 +33,13 @@ int Dice::sumDice(const std::vector<int>& dice) const {
     }
     return sum;
 }
+
+int Dice::sumSpecificElement(const std::vector<int>& dice, int element) const{
+    int sum = 0;
+    for (int die : dice) {
+        if (die == element) {
+            sum += die;
+        }
+    }
+    return sum;
+}
